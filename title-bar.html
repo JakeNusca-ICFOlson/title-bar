@@ -1,0 +1,60 @@
+<link rel="import" href="./bower_components/polymer/polymer-element.html">
+
+<dom-module id="title-bar">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      h2 {
+        font-family: sans-serif;
+        color: yellowgreen;
+        display: inline-block;
+      }
+      a {
+        font-family: sans-serif;
+        font-size: 18px;
+        text-decoration: none;
+        float: right;
+        color: blue;
+      }
+    </style>
+
+    <h2>[[title]]</h2>
+
+    <dom-if if="[[ helpUrl ]]">
+      <template>
+        <a href="[[ helpUrl ]]">?</a>
+      </template>
+    </dom-if>
+
+  </template>
+
+  <script>
+    /**
+     * `title-bar`
+     * Title bar with optional help link
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class TitleBar extends Polymer.Element {
+      static get is() { return 'title-bar'; }
+      static get properties() {
+        return {
+          title: {
+            type: String,
+            value: 'title-bar'
+          },
+          helpUrl: {
+            type: String,
+            value: ''
+          }
+        };
+      }
+    }
+
+    window.customElements.define(TitleBar.is, TitleBar);
+  </script>
+</dom-module>
