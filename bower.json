@@ -1,6 +1,6 @@
 {
   "name": "title-bar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Title bar with optional help link",
   "main": "title-bar.html",
   "dependencies": {

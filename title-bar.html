@@ -1,4 +1,5 @@
-<link rel="import" href="./bower_components/polymer/polymer-element.html">
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer/lib/elements/dom-if.html">
 
 <dom-module id="title-bar">
   <template>
@@ -16,17 +17,16 @@
         font-size: 18px;
         text-decoration: none;
         float: right;
-        color: blue;
+        color: dodgerblue;
+        margin: 1em;
       }
     </style>
 
-    <h2>[[title]]</h2>
+    <h2>[[ title ]]</h2>
 
-    <dom-if if="[[ helpUrl ]]">
-      <template>
-        <a href="[[ helpUrl ]]">?</a>
-      </template>
-    </dom-if>
+    <template is="dom-if" if="[[ helpUrl ]]">
+      <a href="[[ helpUrl ]]">?</a>
+    </template>
 
   </template>
 
